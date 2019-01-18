@@ -87,7 +87,8 @@ var bhavCopyData = function(scrip,monthweek,num, cb) {
 	    	run(cb);
 	  };
 
-  //API to return list of scrips to frontend
+  //API to return list of scrips to frontend.  This is recursive in a sense, if lastloaddate is not set -
+  //function first update the lastloaddate and then calls itself again. 
   var getScrips = function(filter, cb) {
 	  if(!lastloaddate) {
 			  getLastLoadDate((err,entities,info) => {

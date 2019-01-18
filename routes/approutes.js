@@ -1,3 +1,5 @@
+//Defines routes for the application linked to controllers/callback functions
+
 var infopanelctrl = require('../controllers/infoPanelController.js');
 var chartctrl = require('../controllers/chartController.js');
 var scriplistctrl = require('../controllers/scripListController.js');

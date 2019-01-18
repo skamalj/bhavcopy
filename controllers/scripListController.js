@@ -1,3 +1,4 @@
+//Callback function to route - /getScrips
 var bhavcopy = require('../models/bhavcopy.js');
 
 var populateScripList = function(req, res){

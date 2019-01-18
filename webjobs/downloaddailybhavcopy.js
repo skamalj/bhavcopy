@@ -1,3 +1,6 @@
+//Defines a backend job to download a daily file.  x-appengine-cron header is used to restrict 
+// usage to appengine only.  This function cannot be run from external web
+
 var df = require('dateformat')
 const {Storage} = require('@google-cloud/storage');
 

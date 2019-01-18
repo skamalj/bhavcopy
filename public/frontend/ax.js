@@ -1,3 +1,5 @@
+//List of ajax function which are called by application main page to change 
+//chart and infopanel data
 
 function loadScrips(vueObj) {
 	  var searchquery = vueObj.message;

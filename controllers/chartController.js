@@ -1,3 +1,5 @@
+//Callback function for route - /getScripData/:scrip/:monthweek/:num
+
 var bhavcopy = require('../models/bhavcopy.js');
 var dateFormat = require('dateformat');
 const logger = require('winston');

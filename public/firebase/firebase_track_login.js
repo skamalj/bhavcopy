@@ -1,4 +1,8 @@
-      initApp = function() {
+//This script creates and executes (on load) - results in setting event function for 
+//firebase onAuthStateChanged trigger.
+//Function toggles the signin-signout link on top right of page along with user name display
+
+initApp = function() {
         firebase.auth().onAuthStateChanged(function(user) {
           if (user) {
             // User is signed in.
