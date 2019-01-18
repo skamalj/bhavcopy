@@ -2,10 +2,6 @@ var express = require('express');
 const logger = require('winston');
 
 
-logger.add(new logger.transports.Console({
-    format: logger.format.simple()
-  }));
-
 //set up handlebars view engine and express app
 var handlebars = require('express-handlebars').create({
 	defaultLayout : 'main'

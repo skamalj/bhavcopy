@@ -1,9 +1,6 @@
 var bhavcopy = require('../models/bhavcopy.js');
 const logger = require('winston');
 
-logger.add(new logger.transports.Console({
-    format: logger.format.simple()
-  }));
 
 var populate52WeekLowHigh = function(req, res){
 	bhavcopy.get52WeekLowHigh(req.params.scrip, (err, data) => {
