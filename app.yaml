@@ -4,3 +4,7 @@ handlers:
 - url: /.*
   secure: always
   script: auto
+
+env_variables:
+  PROJECT_ID: "bhavcopy"
+  DS_KIND: "DailyBhavcopy"  

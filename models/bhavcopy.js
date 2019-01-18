@@ -4,9 +4,9 @@ const moment = require('moment');
 const logger = require('winston');
 
 // Your Google Cloud Platform project ID
-const projectId = 'bhavcopy';
+const projectId = process.env.PROJECT_ID;
 //The kind for the new entity
-const kind = 'DailyBhavcopy';
+const kind = process.env.DS_KIND;
 
 var lastloaddate = null;
 
