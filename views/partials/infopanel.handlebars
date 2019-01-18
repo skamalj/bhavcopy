@@ -1,0 +1,30 @@
+<div id="{{ chart_id }}_infoPanel" class="w3-panel w3-border w3-teal w3-round-large">
+<div class="w3-row">
+  <div class="w3-third">
+  	<p>Low: \{{ low }} </p>
+  	<p>High: \{{ high }}</p>
+  </div>
+  <div class="w3-third">
+  	<p>Prev. Close: \{{ prevclose }} </p>
+  	<p>52WkLow: \{{ low52wk }}</p>
+  </div>
+  <div class="w3-third">
+  	<p>Avg. Vol. : \{{ avgvol }} </p>
+  	<p>52WkHigh: \{{ high52wk }}</p>
+  </div>
+</div>
+</div>
+<script>
+var {{ chart_id }}_vueObjInfoPanel = new Vue({
+  el: '#{{ chart_id }}_infoPanel',
+  data: {
+    message: 'test',
+    low: '',
+    high: '',
+    prevclose:  '',
+    low52wk: '',
+    high52wk: '',
+    avgvol: ''
+  }
+});
+</script>

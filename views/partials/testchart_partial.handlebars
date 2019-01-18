@@ -1,0 +1,77 @@
+<div id={{ chart_id }} class="w3-row">
+  <input class="w3-col w3-input" style="width:35%" placeholder="Type and Enter..." v-model="message" list="{{ chart_id }}mylist" @change="loadScrips({{ chart_id }}_vueObj)">
+  	<datalist id="{{ chart_id }}mylist">
+  		<option v-for="x in list" :value="x">\{{ x }}</option>
+  	</datalist>	
+  	<select class="w3-white w3-select w3-input w3-col" style="width:35%" v-model="monthweek"  placeholder="Select Duration...">
+  		<option value="" disabled selected>Choose duration...</option>
+  		<option v-for="mw in Object.keys(mwlist)" :value="mw">\{{ mw }}</option>
+  	</select>
+  	<button class="w3-btn w3-teal" v-on:click="loadData">loadData</button>
+</div>
+
+<canvas id="{{ chart_id }}Canvas"></canvas>
+
+<script>
+var ctx = document.getElementById("{{ chart_id }}Canvas").getContext('2d');
+
+var {{ chart_id }}drawChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: [1,2,3,4,5,6],
+        datasets: [{
+            label: 'Stock Price',
+            yAxisID: 'leftAxis',
+            borderColor: '#cc65fe',
+            data: [1,2,3,4,5,6],
+            fill: false,
+            type: 'line'
+        }, {
+            label: 'Volume',
+            yAxisID: 'rightAxis',
+            borderColor: '#ffce56',
+            borderWidth: 2,
+            data: [7,5,3,9,5,17],
+            fill: true
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+            	id: 'leftAxis',	
+            	position: 'left',
+                ticks: {
+                    beginAtZero:false
+                }
+            }, {
+            	id: 'rightAxis',	
+            	position: 'right',
+            	gridLines: {
+                	display:false
+            	}
+            }]
+        }
+    }
+});
+
+var {{ chart_id }}_vueObj = new Vue({
+  el: '#{{ chart_id }}',
+  data: {
+    message: '',
+    monthweek: "",
+    chart: {{ chart_id }}drawChart,
+    list: [],
+    mwlist: {"One Week": "w1","Two Weeks": "w2", "One Month": "m1","Three Months": "m3",
+    	"Six Months": "m6", "One year": "m12"} 
+  },
+  computed: {
+  	mwval: function() { return this.mwlist[this.monthweek] }
+  },
+  methods: {
+   loadData: function() { 
+        populateInfoPane({{ chart_id }}_vueObjInfoPanel, this.message);
+   		loadScripData(this); 
+   	}
+   }
+});
+</script>

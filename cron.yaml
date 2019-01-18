@@ -1,0 +1,4 @@
+cron:
+- description: "Download daily bhavcopy"
+  url: /initiateFileDownload
+  schedule: every day 23:00

@@ -1,0 +1,29 @@
+indexes:
+
+- kind: DailyBhavcopy
+  ancestor: no
+  properties:
+  - name: SC_NAME
+    direction: asc
+  - name: FILE_DATE
+    direction: desc
+    
+- kind: DailyBhavcopy
+  ancestor: no
+  properties:
+  - name: FILE_DATE
+  - name: SC_NAME
+
+- kind: DailyBhavcopy
+  ancestor: no
+  properties:
+  - name: SC_NAME
+    direction: asc
+  - name: FILE_DATE
+    direction: asc    
+    
+- kind: DailyBhavcopy
+  ancestor: no
+  properties:
+  - name: SC_NAME
+  - name: SC_TYPE    

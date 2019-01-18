@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<title>Bhavcopy on GAE</title>
+<script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
+<script src="/firebase/firebase_config.js"></script>
+<script src="/firebase/firebase_track_login.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="/frontend/ax.js"></script>
+<script src="/frontend/Chart.js"></script>
+</head>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<body>
+<header>
+<div class="w3-panel w3-blue-grey">
+  <div class="w3-row">
+    <div class="w3-quarter">
+  		<h2>My Bhavcopy Website</h2>
+  		<h3>Built on GCLOUD</h3>
+  	</div>
+  	<div class="w3-quarter">
+  		<p>Storage: Google Firestore( as Datastore)<p>
+  		<p>Batch Jobs: Serverless Functions<p>
+  		<p>Authentication: Google Firebase</p>
+  	</div>	
+  	<div class="w3-quarter">
+  	    <p>Backend: Node.js, Express<p>
+  		<p>Frontend: Vue.js, handlebars, W3.CSS<p>
+  		<p>Chart Lib: Chart.js<p>
+  	</div>	
+    <div class="w3-panel w3-round-xlarge w3-quarter w3-teal">
+  		<p id="sign-in-user">Guest</a></p>
+  		<p><a href="login" id="signIn">Sign In</a></p>
+  		<p><a href="#" style="display: none" id="signOut" onclick="firebase.auth().signOut()">Sign Out</a></p>
+  	</div>  	
+  </div>	
+</div>
+</header>
+{{{body}}}
+</body>
+</html>
